@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Create or Update Exam</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+<div class="container">
+    <h1>Exam Management</h1>
+
+    <section class="form-section">
+        <h2 th:text="${exam.id != null ? 'Update Exam' : 'Create Exam'}"></h2>
+
+        <form th:action="@{${exam.id != null ? '/educator/exam/update' : '/educator/exam/save'}}"
+              th:object="${exam}" method="post" autocomplete="off">
+            <input type="hidden" th:if="${exam.id != null}" th:field="*{id}"/>
+
+            <div class="form-group">
+                <label for="name">Exam Name:</label>
+                <input type="text" th:field="*{name}" id="name" placeholder="Enter Exam Name" required>
+                <div class="error-message"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="subject">Subject:</label>
+                <input type="text" th:field="*{subject}" id="subject" placeholder="Enter Subject" required>
+                <div class="error-message"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="scheduledDate">Scheduled Date:</label>
+                <input type="date" th:field="*{scheduledDate}" id="scheduledDate" required>
+                <div class="error-message"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="scheduledTime">Scheduled Time:</label>
+                <input type="time" th:field="*{scheduledTime}" id="scheduledTime" required>
+                <div class="error-message"></div>
+            </div>
+
+            <button type="submit" class="btn">Save Exam</button>
+            <a href="/educator/dashboard" class="btn btn-secondary">Back to Dashboard</a>
+        </form>
+    </section>
+</div>
+</body>
+<script src="/js/script.js"></script>
+</html>

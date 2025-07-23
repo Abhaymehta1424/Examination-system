@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Dashboard</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+<div class="container">
+    <h1>Student Dashboard</h1>
+    <div style="margin-bottom: 20px;">
+        <a href="/logout" class="btn btn-secondary">Logout</a>
+    </div>
+
+    <section class="table-section">
+        <h2>Available Exams</h2>
+        <table>
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Exam Name</th>
+                <th>Subject</th>
+                <th>Date</th>
+                <th>Time</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:if="${#lists.isEmpty(exams)}">
+                <td colspan="5" style="text-align:center; color: #999;">No exams at the moment.</td>
+            </tr>
+            <tr th:each="exam : ${exams}">
+                <td th:text="${exam.id}"></td>
+                <td th:text="${exam.name}"></td>
+                <td th:text="${exam.subject}"></td>
+                <td th:text="${exam.scheduledDate}"></td>
+                <td th:text="${exam.scheduledTime}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </section>
+</div>
+</body>
+<script src="/js/script.js"></script>
+</html>

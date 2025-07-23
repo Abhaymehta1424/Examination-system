@@ -1,0 +1,139 @@
+<!--<!DOCTYPE html>-->
+<!--<html xmlns:th="http://www.thymeleaf.org">-->
+<!--<head>-->
+<!--    <title>Login</title>-->
+<!--    <link rel="stylesheet" href="/css/styles.css">-->
+<!--    <meta charset="UTF-8" />-->
+<!--</head>-->
+<!--<body>-->
+<!--<div class="container">-->
+<!--    <h2>Login</h2>-->
+
+<!--    <p th:if="${error}" style="color:red; font-weight: 600;" th:text="${error}"></p>-->
+
+<!--    <form action="/login" method="post" autocomplete="off" style="display: flex; flex-direction: column; gap: 15px;">-->
+<!--        <label for="usernameOrEmail">Username:</label>-->
+<!--        <input type="text" id="usernameOrEmail" name="usernameOrEmail" class="form-input" required>-->
+
+<!--        <label for="password">Password:</label>-->
+<!--        <input type="password" id="password" name="password" class="form-input" required>-->
+
+<!--        <button type="submit" class="btn">Login</button>-->
+<!--    </form>-->
+
+<!--    <p style="margin-top: 20px; text-align: center;">-->
+<!--        Don't have an account?-->
+<!--        <a href="/register" class="form-link">Register</a>-->
+<!--    </p>-->
+<!--</div>-->
+<!--</body>-->
+<!--<script src="/js/script.js"></script>-->
+<!--</html>-->
+
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Login</title>
+    <meta charset="UTF-8" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        h2 {
+            color: #333;
+            margin-bottom: 25px;
+        }
+
+        p {
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .form-input {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box; /* Ensures padding doesn't add to the width */
+        }
+
+        .btn {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+        }
+
+        .form-link {
+            color: #007bff;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .form-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Styles for the error message */
+        p[th:if="${error}"] {
+            color: red;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h2>Login</h2>
+
+    <p th:if="${error}" style="color:red; font-weight: 600;" th:text="${error}"></p>
+
+    <form action="/login" method="post" autocomplete="off" style="display: flex; flex-direction: column; gap: 15px;">
+        <label for="usernameOrEmail">Username:</label>
+        <input type="text" id="usernameOrEmail" name="usernameOrEmail" class="form-input" required>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" class="form-input" required>
+
+<!--        <button type="submit" class="btn">Login</button>-->
+        <button class="btn" onclick="window.location.href='educator-dash.html'">Login</button>
+
+
+    </form>
+
+    <p style="margin-top: 20px; text-align: center;">
+        Don't have an account?
+        <a href="/register" class="form-link">Register</a>
+    </p>
+</div>
+</body>
+<script src="/js/script.js"></script>
+</html>

@@ -1,0 +1,68 @@
+/* styles.css */
+
+/* Base setup */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(135deg, #f6f7f8, #e2e3e5);
+    color: #333;
+}
+
+/* Centered container */
+.container {
+    max-width: 450px;
+    margin: 80px auto;
+    background: #fff;
+    padding: 40px 30px;
+    border-radius: 18px;
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.container:hover {
+    transform: scale(1.02);
+}
+
+/* Heading */
+h2 {
+    color: #44423f;
+    margin-bottom: 30px;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    width: 180px;
+    margin: 12px 10px;
+    padding: 15px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-decoration: none;
+    color: #fff;
+    background: #848884;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+.btn:hover {
+    background: #5f625f;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+    transform: translateY(-2px);
+}
+
+/* Responsive */
+@media (max-width: 500px) {
+    .container {
+        margin: 40px 20px;
+        padding: 30px 20px;
+    }
+
+    .btn {
+        width: 80%;
+        font-size: 1rem;
+        padding: 12px;
+    }
+}
